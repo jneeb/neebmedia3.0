@@ -1,0 +1,67 @@
+html
+    margin: 0
+    padding: 0
+    height: 100%
+
+body
+    margin: 0
+    padding: 0
+    height: 100%
+
+header
+
+    .mobileHeader
+
+        .mobileLogo
+            display: none
+
+        .mobileBurger
+            position: absolute
+            right: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 50px
+            width: 50px
+            padding: 15px 15px
+            cursor: pointer
+            z-index: 7
+
+            span,
+            span:before,
+            span:after
+                content: ""
+                display: block
+                background-color: black
+                height: 3px
+                width: 30px
+                position: relative
+                transition: all 0.3s ease-in-out
+
+            span:before
+                top: 10px
+
+            span:after
+                top: -13px
+
+            &.isOpen span
+                background: transparent
+
+            &.isOpen span:before,
+            &.isOpen span:after
+                transform-origin: center
+                transform: rotate(45deg)
+                top: 0
+
+            &.isOpen span:after
+                transform: rotate(-45deg)
+                top: -3px
+
+        .mobileSlider
+            display: none
+
+    .tabletHeader
+        display: none
+
+    .desktopHeader
+        display: none

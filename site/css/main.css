@@ -1,0 +1,104 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+header .mobileHeader .mobileLogo {
+  display: none; }
+
+header .mobileHeader .mobileBurger {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  padding: 15px 15px;
+  cursor: pointer;
+  z-index: 7; }
+  header .mobileHeader .mobileBurger span,
+  header .mobileHeader .mobileBurger span:before,
+  header .mobileHeader .mobileBurger span:after {
+    content: "";
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 30px;
+    position: relative;
+    transition: all 0.3s ease-in-out; }
+  header .mobileHeader .mobileBurger span:before {
+    top: 10px; }
+  header .mobileHeader .mobileBurger span:after {
+    top: -13px; }
+  header .mobileHeader .mobileBurger.isOpen span {
+    background: transparent; }
+  header .mobileHeader .mobileBurger.isOpen span:before,
+  header .mobileHeader .mobileBurger.isOpen span:after {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 0; }
+  header .mobileHeader .mobileBurger.isOpen span:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: -3px; }
+
+header .mobileHeader .mobileSlider {
+  display: none; }
+
+header .tabletHeader {
+  display: none; }
+
+header .desktopHeader {
+  display: none; }
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url(/img/hero-01.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#portfolio h2 {
+  text-align: center; }
+
+#portfolio .portfoliowrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #portfolio .portfoliowrapper span {
+    margin: 10px;
+    display: block;
+    background-color: pink;
+    height: 300px;
+    width: 300px; }
+
+#services .mobileServices .mobileWebDevelopment span {
+  display: block;
+  width: 100%;
+  height: 500px;
+  background-color: pink; }
+
+#services .mobileServices .mobileEcommerce span {
+  display: block;
+  width: 100%;
+  height: 500px;
+  background-color: blue; }
+
+#services .mobileServices .mobileSEO span {
+  display: block;
+  width: 100%;
+  height: 500px;
+  background-color: black; }
