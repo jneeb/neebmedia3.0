@@ -5,7 +5,8 @@
         <title></title>
         <link rel="stylesheet" href="/css/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        <link rel="stylesheet" href="/slick/slick.css">
+        <link rel="stylesheet" href="/slick/slick-theme.css">
     </head>
     <body>
         <header class="nav">
@@ -60,15 +61,36 @@
         </section>
 
         <section id="services">
-            <div class="mobileServices">
-                <div class="serviceCarousel mobileWebDevelopment">
-                    <span></span>
+            <div class="serviceCarousel">
+                <div class="mySlides fade">
+                    <div class="webDev">
+                        <span class="serviceHeader">
+                            <span class="prev" onclick="plusSlides(-1)"></span>
+                            <h2>Web Development</h2>
+                            <span class="next" onclick="plusSlides(1)"></span>
+                        </span>
+                    </div>
                 </div>
-                <div class="serviceCarousel mobileEcommerce">
-                    <span></span>
+                <div class="mySlides fade">
+                    <div class="eCom">
+                        <span class="serviceHeader">
+                            <span class="prev" onclick="plusSlides(-1)"></span>
+                            <h2>Web Development</h2>
+                            <span class="next" onclick="plusSlides(1)"></span>
+                        </span>
+                        <div class="webDevWrapper">
+
+                        </div>
+                    </div>
                 </div>
-                <div class="serviceCarousel mobileSEO">
-                    <span></span>
+                <div class="mySlides fade">
+                    <span class="SEO">
+                        <span class="serviceHeader">
+                            <span class="prev" onclick="plusSlides(-1)"></span>
+                            <h2>Web Development</h2>
+                            <span class="next" onclick="plusSlides(1)"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -84,32 +106,27 @@
         <section id="footer">
             <div class="footerWrapper">
                 <ul>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="">Web Development</a></li>
+                    <li><a href="">E-Commerce</a></li>
+                    <li><a href="">SEO</a></li>
                 </ul>
                 <div class="footerLogo">
-
-                </div>
-                <div class="subscribeWrapper">
-
+                    <h3>Logo</h3>
                 </div>
             </div>
             <div class="footerWrapper">
                 <div class="socialWrapper">
-
+                    
                 </div>
                 <div class="copyrightWrapper">
-
+                    <p>2019 neebmedia</p>
                 </div>
             </div>
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="functions/slick.min.js"></script>
-        <script type="text/javascript" src="functions/serviceCarousel.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="/slick/slick.min.js"></script>
+        <script type="text/javascript" src="/functions/slick.js"></script>
     </body>
     <script type="text/javascript" src="/functions/burger.js"></script>
 </html>
