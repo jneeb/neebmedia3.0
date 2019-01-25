@@ -8,12 +8,16 @@ body
     padding: 0
     height: 100%
 
-header
+.nav
 
     .mobileHeader
 
         .mobileLogo
-            display: none
+
+            img
+                padding: 30px
+                height: 20px
+                position: absolute
 
         .mobileBurger
             position: absolute
@@ -65,3 +69,27 @@ header
 
     .desktopHeader
         display: none
+
+@media (min-width: 600px)
+
+    .nav
+
+        .mobileHeader
+
+            .mobileLogo
+
+                img
+                    height: 30px
+                    padding: 25px
+
+            .mobileBurger
+
+            .mobileSlider
+
+@media (min-width: 900px)
+
+    header
+
+@media (min-width: 1200px)
+
+    header

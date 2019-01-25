@@ -8,10 +8,12 @@ body {
   padding: 0;
   height: 100%; }
 
-header .mobileHeader .mobileLogo {
-  display: none; }
+.nav .mobileHeader .mobileLogo img {
+  padding: 30px;
+  height: 20px;
+  position: absolute; }
 
-header .mobileHeader .mobileBurger {
+.nav .mobileHeader .mobileBurger {
   position: absolute;
   right: 0;
   display: flex;
@@ -22,9 +24,9 @@ header .mobileHeader .mobileBurger {
   padding: 15px 15px;
   cursor: pointer;
   z-index: 7; }
-  header .mobileHeader .mobileBurger span,
-  header .mobileHeader .mobileBurger span:before,
-  header .mobileHeader .mobileBurger span:after {
+  .nav .mobileHeader .mobileBurger span,
+  .nav .mobileHeader .mobileBurger span:before,
+  .nav .mobileHeader .mobileBurger span:after {
     content: "";
     display: block;
     background-color: white;
@@ -32,32 +34,37 @@ header .mobileHeader .mobileBurger {
     width: 30px;
     position: relative;
     transition: all 0.3s ease-in-out; }
-  header .mobileHeader .mobileBurger span:before {
+  .nav .mobileHeader .mobileBurger span:before {
     top: 10px; }
-  header .mobileHeader .mobileBurger span:after {
+  .nav .mobileHeader .mobileBurger span:after {
     top: -13px; }
-  header .mobileHeader .mobileBurger.isOpen span {
+  .nav .mobileHeader .mobileBurger.isOpen span {
     background: transparent; }
-  header .mobileHeader .mobileBurger.isOpen span:before,
-  header .mobileHeader .mobileBurger.isOpen span:after {
+  .nav .mobileHeader .mobileBurger.isOpen span:before,
+  .nav .mobileHeader .mobileBurger.isOpen span:after {
     -webkit-transform-origin: center;
             transform-origin: center;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     top: 0; }
-  header .mobileHeader .mobileBurger.isOpen span:after {
+  .nav .mobileHeader .mobileBurger.isOpen span:after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
     top: -3px; }
 
-header .mobileHeader .mobileSlider {
+.nav .mobileHeader .mobileSlider {
   display: none; }
 
-header .tabletHeader {
+.nav .tabletHeader {
   display: none; }
 
-header .desktopHeader {
+.nav .desktopHeader {
   display: none; }
+
+@media (min-width: 600px) {
+  .nav .mobileHeader .mobileLogo img {
+    height: 30px;
+    padding: 25px; } }
 
 #hero {
   display: flex;
@@ -73,17 +80,21 @@ header .desktopHeader {
 #portfolio h2 {
   text-align: center; }
 
-#portfolio .portfoliowrapper {
+#portfolio .portfolioWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  #portfolio .portfoliowrapper span {
+  #portfolio .portfolioWrapper span {
     margin: 10px;
     display: block;
     background-color: pink;
     height: 300px;
     width: 300px; }
+
+@media (min-width: 600px) {
+  #portfolio .portfolioWrapper {
+    flex-direction: row; } }
 
 #services .serviceCarousel .mySlides {
   display: none; }
@@ -131,6 +142,34 @@ header .desktopHeader {
 #services .serviceCarousel .next {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg); }
+
+#services .desktopCarousel {
+  display: none; }
+
+@media (min-width: 600px) {
+  #services .serviceCarousel {
+    display: none; }
+  #services .desktopCarousel {
+    display: block;
+    height: 100vh; }
+    #services .desktopCarousel ul {
+      margin: 0;
+      padding: 0; }
+      #services .desktopCarousel ul li {
+        display: inline-block;
+        padding: 0 30px; }
+  #services .desktopWebDev {
+    display: none; }
+  #services .desktopEcom {
+    display: none; }
+  #services .desktopSEO {
+    display: none; }
+  #services .desktopWebDev.show {
+    display: block; }
+  #services .desktopEcom.show {
+    display: block; }
+  #services .desktopSEO.show {
+    display: block; } }
 
 #contact h2 {
   text-align: center; }
