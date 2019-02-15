@@ -9,6 +9,8 @@ body {
   height: 100%; }
 
 .nav .mobileHeader .mobileLogo img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
   padding: 30px;
   height: 20px;
   position: absolute; }
@@ -52,11 +54,31 @@ body {
             transform: rotate(-45deg);
     top: -3px; }
 
-.nav .mobileHeader .mobileSlider {
-  display: none; }
+.nav .mobileHeader .mobileSlider.isOpen {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
 
-.nav .tabletHeader {
-  display: none; }
+.nav .mobileHeader .mobileSlider {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  background: white;
+  width: 60%;
+  height: 100%; }
+  .nav .mobileHeader .mobileSlider ul {
+    margin: 0;
+    padding: 0; }
+    .nav .mobileHeader .mobileSlider ul li:nth-child(1) {
+      border-top: none; }
+    .nav .mobileHeader .mobileSlider ul li {
+      text-decoration: none;
+      padding: 20px 10px;
+      font-size: 20px;
+      border-top: 1px solid black; }
+      .nav .mobileHeader .mobileSlider ul li a {
+        color: black;
+        text-decoration: none; }
 
 .nav .desktopHeader {
   display: none; }
@@ -64,7 +86,35 @@ body {
 @media (min-width: 600px) {
   .nav .mobileHeader .mobileLogo img {
     height: 30px;
-    padding: 25px; } }
+    padding: 25px; }
+  .nav .mobileHeader .mobileSlider ul li {
+    font-size: 30px; } }
+
+@media (min-width: 900px) {
+  .nav .mobileHeader {
+    display: none; }
+  .nav .desktopHeader {
+    display: block;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .nav .desktopHeader .logo img {
+      -webkit-filter: invert(1);
+              filter: invert(1);
+      height: 30px;
+      padding: 15px; }
+    .nav .desktopHeader ul {
+      margin: 0;
+      padding: 0; }
+      .nav .desktopHeader ul li {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0 10px; }
+        .nav .desktopHeader ul li a {
+          text-decoration: none;
+          color: white; } }
 
 #hero {
   display: flex;
@@ -94,96 +144,138 @@ body {
 
 @media (min-width: 600px) {
   #portfolio .portfolioWrapper {
-    flex-direction: row; } }
+    flex-direction: row;
+    align-items: flex-start; }
+    #portfolio .portfolioWrapper span:nth-child(2) {
+      margin-top: 80px; } }
 
-#services .serviceCarousel .mySlides {
-  display: none; }
-  #services .serviceCarousel .mySlides .webDev {
-    display: block;
-    width: 100%;
-    height: 500px;
-    background-color: pink; }
-    #services .serviceCarousel .mySlides .webDev .serviceHeader {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-  #services .serviceCarousel .mySlides .eCom {
-    display: block;
-    width: 100%;
-    height: 500px;
-    background-color: black; }
-    #services .serviceCarousel .mySlides .eCom .serviceHeader {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-  #services .serviceCarousel .mySlides .SEO {
-    display: block;
-    width: 100%;
-    height: 500px;
-    background-color: blue; }
-    #services .serviceCarousel .mySlides .SEO .serviceHeader {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-
-#services .serviceCarousel .prev, #services .serviceCarousel .next {
-  cursor: pointer;
-  position: relative;
-  padding: 20px;
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px; }
-
-#services .serviceCarousel .prev {
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg); }
-
-#services .serviceCarousel .next {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
-
-#services .desktopCarousel {
-  display: none; }
+#services {
+  background: #D3D3D3; }
+  #services .serviceCarousel .mySlides {
+    display: none; }
+    #services .serviceCarousel .mySlides .webDev {
+      display: block;
+      width: 100%;
+      height: 500px;
+      background-color: pink; }
+      #services .serviceCarousel .mySlides .webDev .serviceHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    #services .serviceCarousel .mySlides .eCom {
+      display: block;
+      width: 100%;
+      height: 500px;
+      background-color: black; }
+      #services .serviceCarousel .mySlides .eCom .serviceHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    #services .serviceCarousel .mySlides .SEO {
+      display: block;
+      width: 100%;
+      height: 500px;
+      background-color: blue; }
+      #services .serviceCarousel .mySlides .SEO .serviceHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+  #services .serviceCarousel .prev, #services .serviceCarousel .next {
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px; }
+  #services .serviceCarousel .prev {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  #services .serviceCarousel .next {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  #services .desktopCarousel {
+    display: none; }
 
 @media (min-width: 600px) {
-  #services .serviceCarousel {
-    display: none; }
-  #services .desktopCarousel {
+  #services {
+    padding: 100px 0 0 0; }
+    #services .serviceCarousel {
+      display: none; }
+    #services .desktopCarousel {
+      display: block;
+      height: 100vh; }
+      #services .desktopCarousel ul {
+        margin: 0;
+        padding: 0; }
+        #services .desktopCarousel ul li {
+          display: inline-block;
+          padding: 0 30px; }
+    #services .desktopWebDev, #services .desktopEcom, #services .desktopSEO {
+      display: none;
+      margin: 100px 0 0 30px; }
+      #services .desktopWebDev span, #services .desktopEcom span, #services .desktopSEO span {
+        display: block;
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        margin-left: auto;
+        margin-right: auto; }
+      #services .desktopWebDev h2, #services .desktopEcom h2, #services .desktopSEO h2 {
+        font-size: 40px; }
+      #services .desktopWebDev p, #services .desktopEcom p, #services .desktopSEO p {
+        font-size: 20px; }
+    #services .desktopEcom {
+      display: none;
+      margin: 0 0 0 30px; }
+    #services .desktopSEO {
+      display: none;
+      margin: 0 0 0 30px; }
+    #services .desktopWebDev.show {
+      display: block; }
+    #services .desktopEcom.show {
+      display: block; }
+    #services .desktopSEO.show {
+      display: block; } }
+
+@media (min-width: 900px) {
+  #services .desktopCarousel .desktopWebDev, #services .desktopCarousel .desktopEcom, #services .desktopCarousel .desktopSEO {
+    margin-top: 30vh; }
+  #services .desktopCarousel .desktopWebDev {
+    flex-direction: row-reverse; }
+    #services .desktopCarousel .desktopWebDev .webDevContent {
+      width: 50%; }
+  #services .desktopCarousel .desktopEcom {
+    flex-direction: row-reverse; }
+    #services .desktopCarousel .desktopEcom .eComContent {
+      width: 50%; }
+  #services .desktopCarousel .desktopSEO {
+    flex-direction: row-reverse; }
+    #services .desktopCarousel .desktopSEO .seoContent {
+      width: 50%; }
+  #services .desktopCarousel .desktopWebDev.show {
+    display: flex; }
+  #services .desktopCarousel .desktopEcom.show {
+    display: flex; }
+  #services .desktopCarousel .desktopSEO.show {
+    display: flex; } }
+
+#contact {
+  margin: 50px 0; }
+  #contact h2 {
+    text-align: center; }
+  #contact p {
+    text-align: center; }
+  #contact button {
     display: block;
-    height: 100vh; }
-    #services .desktopCarousel ul {
-      margin: 0;
-      padding: 0; }
-      #services .desktopCarousel ul li {
-        display: inline-block;
-        padding: 0 30px; }
-  #services .desktopWebDev {
-    display: none; }
-  #services .desktopEcom {
-    display: none; }
-  #services .desktopSEO {
-    display: none; }
-  #services .desktopWebDev.show {
-    display: block; }
-  #services .desktopEcom.show {
-    display: block; }
-  #services .desktopSEO.show {
-    display: block; } }
+    margin-left: auto;
+    margin-right: auto; }
 
-#contact h2 {
-  text-align: center; }
-
-#contact p {
-  text-align: center; }
-
-#contact button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-#footer .mobileFooter .footerLogo h3 {
-  text-align: center; }
+#footer .mobileFooter .footerLogo {
+  display: flex;
+  justify-content: center; }
+  #footer .mobileFooter .footerLogo img {
+    height: 30px; }
 
 #footer .mobileFooter .footerSocials ul {
   margin: 0;
@@ -216,3 +308,45 @@ body {
 #footer .mobileFooter .footerCopywrite .copywrite p {
   text-align: center;
   margin: 5px 0; }
+
+#footer .desktopFooter {
+  display: none; }
+
+@media (min-width: 900px) {
+  #footer .mobileFooter {
+    display: none; }
+  #footer .desktopFooter {
+    display: block; }
+    #footer .desktopFooter .desktopFooterLogo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #footer .desktopFooter .desktopFooterLogo img {
+        height: 30px; }
+      #footer .desktopFooter .desktopFooterLogo ul {
+        margin: 0;
+        padding: 0; }
+        #footer .desktopFooter .desktopFooterLogo ul li {
+          text-decoration: none;
+          display: inline-block;
+          padding: 0 10px; }
+          #footer .desktopFooter .desktopFooterLogo ul li a {
+            color: black;
+            text-decoration: none; }
+    #footer .desktopFooter .desktopSocials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid black;
+      padding: 5px 0 10px 0; }
+      #footer .desktopFooter .desktopSocials ul {
+        margin: 0;
+        padding: 0; }
+        #footer .desktopFooter .desktopSocials ul li {
+          text-decoration: none;
+          display: inline-block; }
+          #footer .desktopFooter .desktopSocials ul li a {
+            color: black;
+            text-decoration: none; }
+      #footer .desktopFooter .desktopSocials p {
+        margin: 0; } }
