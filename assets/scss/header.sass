@@ -90,7 +90,7 @@ body
                         color: black
                         text-decoration: none
 
-    .desktopHeader
+    #desktopHeader
         display: none
 
 
@@ -123,7 +123,24 @@ body
         .mobileHeader
             display: none
 
-        .desktopHeader
+        #desktopHeader.onScroll
+            background-color: white
+            border-bottom: 1px solid black
+            transition: all 0.2s ease-in-out
+
+            .logo
+
+                img
+                    filter: invert(0)
+
+            ul
+
+                li
+
+                    a
+                        color: black
+
+        #desktopHeader
             display: block
             position: fixed
             width: 100%

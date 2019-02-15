@@ -80,7 +80,7 @@ body {
         color: black;
         text-decoration: none; }
 
-.nav .desktopHeader {
+.nav #desktopHeader {
   display: none; }
 
 @media (min-width: 600px) {
@@ -93,26 +93,35 @@ body {
 @media (min-width: 900px) {
   .nav .mobileHeader {
     display: none; }
-  .nav .desktopHeader {
+  .nav #desktopHeader.onScroll {
+    background-color: white;
+    border-bottom: 1px solid black;
+    transition: all 0.2s ease-in-out; }
+    .nav #desktopHeader.onScroll .logo img {
+      -webkit-filter: invert(0);
+              filter: invert(0); }
+    .nav #desktopHeader.onScroll ul li a {
+      color: black; }
+  .nav #desktopHeader {
     display: block;
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center; }
-    .nav .desktopHeader .logo img {
+    .nav #desktopHeader .logo img {
       -webkit-filter: invert(1);
               filter: invert(1);
       height: 30px;
       padding: 15px; }
-    .nav .desktopHeader ul {
+    .nav #desktopHeader ul {
       margin: 0;
       padding: 0; }
-      .nav .desktopHeader ul li {
+      .nav #desktopHeader ul li {
         display: inline-block;
         text-decoration: none;
         padding: 0 10px; }
-        .nav .desktopHeader ul li a {
+        .nav #desktopHeader ul li a {
           text-decoration: none;
           color: white; } }
 
